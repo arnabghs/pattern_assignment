@@ -1,11 +1,9 @@
-const patternLib = require('./src/pattern_library.js');
-const { generateRectangle } = patternLib;
+const { generateRectangle } = require('./src/pattern_library.js');
+const { takeInput } = require('./src/pattern_util.js');
 
 const main = function (){
-  let pattern = process.argv[2];
-  let width = + process.argv[3];
-  let height = +process.argv[4];
-  let finalRectangle = generateRectangle(pattern,width,height);
+  let { pattern,height,width } = takeInput();
+  let finalRectangle = generateRectangle(pattern,height,width);
   console.log(finalRectangle);
 }
 

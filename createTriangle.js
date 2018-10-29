@@ -1,10 +1,9 @@
-const patternLib = require('./src/pattern_library.js');
-const { generateTriangle } = patternLib;
+const { generateTriangle }  = require('./src/pattern_library.js');
+const { takeInput } = require('./src/pattern_util.js');
 
 const main = function (){
-  let type = process.argv[2];
-  let height = +process.argv[3];
-  let finalTriangle = generateTriangle(type,height);
+  let { pattern,height } = takeInput();
+  let finalTriangle = generateTriangle(pattern,height);
   console.log(finalTriangle);
 }
 
