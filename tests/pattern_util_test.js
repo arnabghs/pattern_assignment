@@ -58,4 +58,4 @@ testMakeLowerPart(2,'\\','/',' ',outputLowerAngled_5);
 testMakeLowerPart(1,'\\','/',' ',outputLowerAngled_4);
 
 
-console.log("\n......... everything is fine ............\n");
+console.log("\n......... everything is fine in util library............\n");

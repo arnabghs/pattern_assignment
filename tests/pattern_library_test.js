@@ -269,4 +269,4 @@ testDiamond('angled',9,output_angled_9);
 
 
 
-console.log("\n......... everything is fine ..............\n");
+console.log("\n......... everything is fine in pattern library..............\n");
