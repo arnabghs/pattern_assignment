@@ -29,7 +29,7 @@ const makeHollowRectangle = function (width,height){
   return result;
 }
 
-const makeAltRectangle = function (width,height){
+const makeAlternateRectangle = function (width,height){
   let result = "";
   let delimeter = "";
   for(lineNumber = 0; lineNumber<height; lineNumber++){
@@ -46,7 +46,7 @@ const generateRectangle = function (userInputs){
   let {pattern, height, width} = userInputs;
   let rectangleCreator = { filled : makeFilledRectangle(width,height),
     hollow : makeHollowRectangle(width,height),
-    alternating : makeAltRectangle(width,height)}
+    alternating : makeAlternateRectangle(width,height)}
   return rectangleCreator[pattern];
 }
 
