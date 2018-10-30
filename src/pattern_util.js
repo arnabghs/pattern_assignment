@@ -1,16 +1,13 @@
 const repeatCharacter = function(character,width) {
-  let result="";
-  for (let chars=0; chars <width; chars++){
-    result = result + character;
-  }
-  return result;
+  return new Array(width).fill(character).join("");
 }
 
 const takeInput = function(inputArray){
   let argsArray = inputArray.slice(2);
   let pattern = argsArray[0];
-  let height = argsArray[1];
-  let width = argsArray[2];
+  let height = +argsArray[1];
+  let width = +argsArray[2];
+  if ( argsArray[2] == undefined) width = height;
   return {pattern : pattern, height : height, width : width} 
 }
 

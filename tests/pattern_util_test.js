@@ -66,11 +66,11 @@ const testTakeInput = function (inputArray, expectedOutput){
 testTakeInput(['node','file.js','filled','5','10'],{pattern : 'filled', height : 5, width : 10});
 testTakeInput(['node','file.js','hollow','10','5'],{pattern : 'hollow', height : 10, width : 5});
 testTakeInput(['node','file.js','alternating','5','5'],{pattern : 'alternating', height : 5, width : 5});
-testTakeInput(['node','file.js','right','5'],{pattern : 'right', height : 5, width : undefined});
-testTakeInput(['node','file.js','left','5'],{pattern : 'left', height : 5, width : undefined});
-testTakeInput(['node','file.js','filled','5'],{pattern : 'filled', height : 5, width : undefined});
-testTakeInput(['node','file.js','hollow','5'],{pattern : 'hollow', height : 5, width : undefined});
-testTakeInput(['node','file.js','angled','5'],{pattern : 'angled', height : 5, width : undefined});
+testTakeInput(['node','file.js','right','5'],{pattern : 'right', height : 5, width : 5});
+testTakeInput(['node','file.js','left','5'],{pattern : 'left', height : 5, width : 5});
+testTakeInput(['node','file.js','filled','5'],{pattern : 'filled', height : 5, width : 5});
+testTakeInput(['node','file.js','hollow','5'],{pattern : 'hollow', height : 5, width : 5});
+testTakeInput(['node','file.js','angled','5'],{pattern : 'angled', height : 5, width : 5});
 
 
 
