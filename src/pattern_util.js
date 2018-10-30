@@ -2,6 +2,10 @@ const repeatCharacter = function(character,width) {
   return new Array(width).fill(character).join("");
 }
 
+const starredLine = function(width){
+  return repeatCharacter("*",width);
+}
+
 const takeInput = function(inputArray){
   let argsArray = inputArray.slice(2);
   let pattern = argsArray[0];
@@ -66,4 +70,4 @@ const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
 }
 
 
-module.exports = { repeatCharacter,takeInput, makeUpperPart, makeLowerPart };
+module.exports = { repeatCharacter,takeInput, makeUpperPart, makeLowerPart, starredLine };

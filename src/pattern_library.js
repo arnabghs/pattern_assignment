@@ -1,19 +1,12 @@
 const patternUtil = require ('./pattern_util.js');
-const { repeatCharacter, makeUpperPart, makeLowerPart } = patternUtil;
+const { repeatCharacter, makeUpperPart, makeLowerPart, starredLine } = patternUtil;
 
 
 //.............. Rectangle ...................//
 
 
 const makeFilledRectangle = function (width,height){
-  let result = "";
-  let delimeter = "";
-  for (lineNumber=0;lineNumber <height; lineNumber++){
-    result = result + delimeter;
-    result += repeatCharacter("*",width);
-    delimeter = "\n";
-  }
-  return result;
+    return new Array(height).fill(starredLine(width)).join("\n");
 }
 
 const makeHollowRectangle = function (width,height){
