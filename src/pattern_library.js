@@ -23,9 +23,7 @@ const makeHollowRectangle = function (width,height){
   for (lineNumber=0;lineNumber<height-2; lineNumber++){
     result = result + "\n" + "*" + middle + "*";
   }
-  if ( height != 1){
-    result += "\n" + repeatCharacter("*",width);
-  }
+  if ( height != 1) result += "\n" + repeatCharacter("*",width);
   return result;
 }
 
