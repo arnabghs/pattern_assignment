@@ -1,4 +1,4 @@
-const generateLine = function(character,width) {
+const repeatCharacter = function(character,width) {
   let result="";
   for (let chars=0; chars <width; chars++){
     result = result + character;
@@ -25,8 +25,8 @@ const makeUpperPart = function (linesUpper,firstchar,lastchar,midchars){
   while (index < linesUpper){
     result += delimeter;
     delimeter = "\n";
-    result += generateLine(" ",widthOfSpace)+firstCharacter;
-    result += generateLine(midchars,widthOfHollow)+lastCharacter;
+    result += repeatCharacter(" ",widthOfSpace)+firstCharacter;
+    result += repeatCharacter(midchars,widthOfHollow)+lastCharacter;
     widthOfSpace -= 1;
     firstCharacter = firstchar;
     lastCharacter = lastchar;
@@ -59,8 +59,8 @@ const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
     }
     result += delimeter;
     delimeter = "\n";
-    result += generateLine(" ",widthOfSpace)+firstCharacter;
-    result += generateLine(midchars,widthOfHollow)+lastCharacter;
+    result += repeatCharacter(" ",widthOfSpace)+firstCharacter;
+    result += repeatCharacter(midchars,widthOfHollow)+lastCharacter;
     widthOfSpace += 1;
     widthOfHollow -= 2;
     index++;
@@ -69,4 +69,4 @@ const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
 }
 
 
-module.exports = { generateLine,takeInput, makeUpperPart, makeLowerPart };
+module.exports = { repeatCharacter,takeInput, makeUpperPart, makeLowerPart };

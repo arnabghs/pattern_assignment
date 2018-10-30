@@ -1,12 +1,12 @@
 const assert = require("assert");
 const patternUtil = require ('../src/pattern_util.js');
-const { generateLine, takeInput, makeUpperPart, makeLowerPart } = patternUtil;
+const { repeatCharacter, takeInput, makeUpperPart, makeLowerPart } = patternUtil;
 
 
-//........ test for generateLine .............//
+//........ test for repeatCharacter .............//
 
 const testGenerateLine = function (character, width, expectedOutput){
-  assert.deepEqual(generateLine(character,width),expectedOutput);
+  assert.deepEqual(repeatCharacter(character,width),expectedOutput);
 }
 
 testGenerateLine("", 0, "");

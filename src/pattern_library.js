@@ -1,5 +1,5 @@
 const patternUtil = require ('./pattern_util.js');
-const { generateLine, makeUpperPart, makeLowerPart } = patternUtil;
+const { repeatCharacter, makeUpperPart, makeLowerPart } = patternUtil;
 
 
 //.............. Rectangle ...................//
@@ -10,7 +10,7 @@ const makeFilledRectangle = function (width,height){
   let delimeter = "";
   for (lineNumber=0;lineNumber <height; lineNumber++){
     result = result + delimeter;
-    result += generateLine("*",width);
+    result += repeatCharacter("*",width);
     delimeter = "\n";
   }
   return result;
@@ -18,13 +18,13 @@ const makeFilledRectangle = function (width,height){
 
 const makeHollowRectangle = function (width,height){
   let result = "";
-  result+=generateLine("*",width);
-  let middle = generateLine(" ",width-2);
+  result+=repeatCharacter("*",width);
+  let middle = repeatCharacter(" ",width-2);
   for (lineNumber=0;lineNumber<height-2; lineNumber++){
     result = result + "\n" + "*" + middle + "*";
   }
   if ( height != 1){
-    result += "\n" + generateLine("*",width);
+    result += "\n" + repeatCharacter("*",width);
   }
   return result;
 }
@@ -37,7 +37,7 @@ const makeAltRectangle = function (width,height){
     delimeter = "\n";
     let symbol = "-";
     if(lineNumber%2 == 0) symbol = "*";
-    result += generateLine(symbol,width);
+    result += repeatCharacter(symbol,width);
   }
   return result;
 }
@@ -62,8 +62,8 @@ const generateTriangle = function(userInputs){
     let limitForSpace = (height-line);
     let symbol = ' ';
     if (pattern == 'left') symbol = '';
-    result += generateLine(symbol,limitForSpace);
-    result += generateLine("*",line);
+    result += repeatCharacter(symbol,limitForSpace);
+    result += repeatCharacter("*",line);
     }
   return result;
 }
