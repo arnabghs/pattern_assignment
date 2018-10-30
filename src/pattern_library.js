@@ -1,5 +1,5 @@
 const patternUtil = require ('./pattern_util.js');
-const { repeatCharacter, makeUpperPart, makeLowerPart, starredLine } = patternUtil;
+const { repeatCharacter, makeUpperPart, makeLowerPart, starredLine, hollowLine } = patternUtil;
 
 
 //.............. Rectangle ...................//

@@ -6,6 +6,10 @@ const starredLine = function(width){
   return repeatCharacter("*",width);
 }
 
+const hollowLine = function(width){
+  return repeatCharacter(" ",width);
+}
+
 const takeInput = function(inputArray){
   let argsArray = inputArray.slice(2);
   let pattern = argsArray[0];
@@ -70,4 +74,4 @@ const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
 }
 
 
-module.exports = { repeatCharacter,takeInput, makeUpperPart, makeLowerPart, starredLine };
+module.exports = { repeatCharacter, takeInput, makeUpperPart, makeLowerPart, starredLine, hollowLine };
