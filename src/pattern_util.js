@@ -6,10 +6,11 @@ const generateLine = function(character,width) {
   return result;
 }
 
-const takeInput = function(){
-  let pattern = process.argv[2];
-  let height = process.argv[3];
-  let width = process.argv[4];
+const takeInput = function(inputArray){
+  let argsArray = inputArray.slice(2);
+  let pattern = argsArray[0];
+  let height = argsArray[1];
+  let width = argsArray[2];
   return {pattern : pattern, height : height, width : width} 
 }
 
