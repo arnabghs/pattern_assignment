@@ -42,15 +42,18 @@ const makeAltRectangle = function (width,height){
   return result;
 }
 
-const generateRectangle = function (type,height,width){
+const generateRectangle = function (userInputs){
+  let {pattern, height, width} = userInputs;
   let rectangleCreator = { filled : makeFilledRectangle(width,height),
     hollow : makeHollowRectangle(width,height),
     alternating : makeAltRectangle(width,height)}
-  return rectangleCreator[type];
+  return rectangleCreator[pattern];
 }
 
 //................ Triangle ..................//
-const generateTriangle = function(type,height){
+
+const generateTriangle = function(userInputs){
+  let {pattern, height} = userInputs;
   let result = "";
   let delimeter = "";
   for (line = 1; line <= height; line++){
@@ -58,7 +61,7 @@ const generateTriangle = function(type,height){
     delimeter = "\n";
     let limitForSpace = (height-line);
     let symbol = ' ';
-    if (type == 'left') symbol = '';
+    if (pattern == 'left') symbol = '';
     result += generateLine(symbol,limitForSpace);
     result += generateLine("*",line);
     }
@@ -67,7 +70,8 @@ const generateTriangle = function(type,height){
 
 //.............. Diamond ...................//
 
-const generateDiamond = function (pattern,height){
+const generateDiamond = function (userInputs){
+  let {pattern, height} = userInputs;
   if(height%2 == 1) height++ ;
   linesUpper = height/2;
   linesLower = linesUpper - 1;
