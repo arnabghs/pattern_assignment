@@ -1,5 +1,5 @@
 const patternUtil = require ('./pattern_util.js');
-const { repeatCharacter, makeUpperPart, makeLowerPart, starLineGenetator, hollowLineGenetator } = patternUtil;
+const { repeatCharacter, makeUpperPart, makeLowerPart, starLineGenetator, hollowLineGenetator, dashLineGenerator } = patternUtil;
 
 
 //.............. Rectangle ...................//
@@ -18,16 +18,10 @@ const makeHollowRectangle = function (width,height){
 }
 
 const makeAlternateRectangle = function (width,height){
-  let result = "";
-  let delimeter = "";
-  for(lineNumber = 0; lineNumber<height; lineNumber++){
-    result = result + delimeter;
-    delimeter = "\n";
-    let symbol = "-";
-    if(lineNumber%2 == 0) symbol = "*";
-    result += repeatCharacter(symbol,width);
-  }
-  return result;
+  let doubleLineUnit = starLineGenetator(width)+"\n"+dashLineGenerator(width);
+  let outputArray = new Array(Math.floor(height/2)).fill(doubleLineUnit);
+  if (height%2 != 0) outputArray.push(starLineGenetator(width));
+  return outputArray.join("\n");
 }
 
 const generateRectangle = function (userInputs){

@@ -10,6 +10,10 @@ const hollowLineGenetator = function(width){
   return repeatCharacter(" ",width);
 }
 
+const dashLineGenerator = function(width){
+  return repeatCharacter("-",width);
+}
+
 const takeInput = function(inputArray){
   let argsArray = inputArray.slice(2);
   let pattern = argsArray[0];
@@ -74,4 +78,4 @@ const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
 }
 
 
-module.exports = { repeatCharacter, takeInput, makeUpperPart, makeLowerPart, starLineGenetator, hollowLineGenetator };
+module.exports = { repeatCharacter, takeInput, makeUpperPart, makeLowerPart, starLineGenetator, hollowLineGenetator, dashLineGenerator };
