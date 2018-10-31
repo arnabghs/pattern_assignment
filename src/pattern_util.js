@@ -2,11 +2,11 @@ const repeatCharacter = function(character,width) {
   return new Array(width).fill(character).join("");
 }
 
-const starredLine = function(width){
+const starLineGenetator = function(width){
   return repeatCharacter("*",width);
 }
 
-const hollowLine = function(width){
+const hollowLineGenetator = function(width){
   return repeatCharacter(" ",width);
 }
 
@@ -74,4 +74,4 @@ const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
 }
 
 
-module.exports = { repeatCharacter, takeInput, makeUpperPart, makeLowerPart, starredLine, hollowLine };
+module.exports = { repeatCharacter, takeInput, makeUpperPart, makeLowerPart, starLineGenetator, hollowLineGenetator };

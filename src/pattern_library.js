@@ -1,19 +1,19 @@
 const patternUtil = require ('./pattern_util.js');
-const { repeatCharacter, makeUpperPart, makeLowerPart, starredLine, hollowLine } = patternUtil;
+const { repeatCharacter, makeUpperPart, makeLowerPart, starLineGenetator, hollowLineGenetator } = patternUtil;
 
 
 //.............. Rectangle ...................//
 
 
 const makeFilledRectangle = function (width,height){
-  return new Array(height).fill(starredLine(width)).join("\n");
+  return new Array(height).fill(starLineGenetator(width)).join("\n");
 }
 
 const makeHollowRectangle = function (width,height){
-  let starEndHollowLine = "*"+hollowLine(width-2)+"*";
+  let starEndHollowLine = "*"+hollowLineGenetator(width-2)+"*";
   let outputArray = new Array(height).fill(starEndHollowLine);
-  outputArray.splice(0,1,starredLine(width));
-  outputArray.splice(-1,1,starredLine(width));
+  outputArray.splice(0,1,starLineGenetator(width));
+  outputArray.splice(-1,1,starLineGenetator(width));
   return outputArray.join("\n");
 }
 
