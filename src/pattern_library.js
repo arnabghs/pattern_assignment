@@ -6,18 +6,15 @@ const { repeatCharacter, makeUpperPart, makeLowerPart, starredLine, hollowLine }
 
 
 const makeFilledRectangle = function (width,height){
-    return new Array(height).fill(starredLine(width)).join("\n");
+  return new Array(height).fill(starredLine(width)).join("\n");
 }
 
 const makeHollowRectangle = function (width,height){
-  let result = "";
-  result+=repeatCharacter("*",width);
-  let middle = repeatCharacter(" ",width-2);
-  for (lineNumber=0;lineNumber<height-2; lineNumber++){
-    result = result + "\n" + "*" + middle + "*";
-  }
-  if ( height != 1) result += "\n" + repeatCharacter("*",width);
-  return result;
+  let starEndHollowLine = "*"+hollowLine(width-2)+"*";
+  let outputArray = new Array(height).fill(starEndHollowLine);
+  outputArray.splice(0,1,starredLine(width));
+  outputArray.splice(-1,1,starredLine(width));
+  return outputArray.join("\n");
 }
 
 const makeAlternateRectangle = function (width,height){
@@ -55,7 +52,7 @@ const generateTriangle = function(userInputs){
     if (pattern == 'left') symbol = '';
     result += repeatCharacter(symbol,limitForSpace);
     result += repeatCharacter("*",line);
-    }
+  }
   return result;
 }
 
