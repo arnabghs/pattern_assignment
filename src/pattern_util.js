@@ -27,7 +27,7 @@ const makeUpperPart = function (linesUpper,firstchar,lastchar,midchars){
   let result = "";
   let delimeter = "";
   let index = 0;
-  let widthOfSpace = linesUpper - 1;
+  let widthOfSpace = linesUpper;
   let widthOfHollow = 0;
   let firstCharacter = "*";
   let lastCharacter = ""
@@ -44,12 +44,13 @@ const makeUpperPart = function (linesUpper,firstchar,lastchar,midchars){
     if (index == 1){
       widthOfHollow = 1;
     }
-    if (index == linesUpper-1){
-      firstCharacter = "*";
-      lastCharacter = "*"
-    }
   }
   return result;
+}
+
+const makeMiddleLine = function(pattern,width){
+  let createLine = (pattern != "filled") ? hollowLineGenetator : starLineGenetator;
+  return "*"+createLine(width-3)+"*";
 }
 
 const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
@@ -78,4 +79,4 @@ const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
 }
 
 
-module.exports = { repeatCharacter, takeInput, makeUpperPart, makeLowerPart, starLineGenetator, hollowLineGenetator, dashLineGenerator };
+module.exports = { repeatCharacter, takeInput, makeUpperPart, makeLowerPart, starLineGenetator, hollowLineGenetator, dashLineGenerator, makeMiddleLine };

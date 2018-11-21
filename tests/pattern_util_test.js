@@ -22,19 +22,19 @@ const testMakeUpperPart = function (lines,firstChar,lastChar,midChar,expectedOut
   assert.deepEqual(makeUpperPart(lines,firstChar,lastChar,midChar),expectedOutput);
 }
 
-let outputUpperFilled_5 = "  *\n ***\n*****";
-let outputUpperFilled_4 = " *\n***";
-let outputUpperHollow_5 = "  *\n * *\n*   *";
-let outputUpperHollow_4 = " *\n* *";
-let outputUpperAngled_5 = "  *\n / \\\n*   *";
-let outputUpperAngled_4 = " *\n* *";
+let outputUpperFilled_7 = "   *\n  ***\n *****";
+let outputUpperFilled_6 = "  *\n ***";
+let outputUpperHollow_7 = "   *\n  * *\n *   *";
+let outputUpperHollow_6 = "  *\n * *";
+let outputUpperAngled_7 = "   *\n  / \\\n /   \\";
+let outputUpperAngled_6 = "  *\n / \\";
 
-testMakeUpperPart(3,'*','*','*',outputUpperFilled_5);
-testMakeUpperPart(2,'*','*','*',outputUpperFilled_4);
-testMakeUpperPart(3,'*','*',' ',outputUpperHollow_5);
-testMakeUpperPart(2,'*','*',' ',outputUpperHollow_4);
-testMakeUpperPart(3,'/','\\',' ',outputUpperAngled_5);
-testMakeUpperPart(2,'/','\\',' ',outputUpperAngled_4);
+testMakeUpperPart(3,'*','*','*',outputUpperFilled_7);
+testMakeUpperPart(2,'*','*','*',outputUpperFilled_6);
+testMakeUpperPart(3,'*','*',' ',outputUpperHollow_7);
+testMakeUpperPart(2,'*','*',' ',outputUpperHollow_6);
+testMakeUpperPart(3,'/','\\',' ',outputUpperAngled_7);
+testMakeUpperPart(2,'/','\\',' ',outputUpperAngled_6);
 
 
 //................ test for makeLowerPart .............//
