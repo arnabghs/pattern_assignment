@@ -23,15 +23,15 @@ const takeInput = function(inputArray){
   return {pattern : pattern, height : height, width : width} 
 }
 
-const makeUpperPart = function (linesUpper,firstchar,lastchar,midchars){
+const makeUpperPart = function (heightOfHalves,firstchar,lastchar,midchars){
   let result = "";
   let delimeter = "";
   let index = 0;
-  let widthOfSpace = linesUpper;
+  let widthOfSpace = heightOfHalves;
   let widthOfHollow = 0;
   let firstCharacter = "*";
   let lastCharacter = ""
-  while (index < linesUpper){
+  while (index < heightOfHalves){
     result += delimeter;
     delimeter = "\n";
     result += repeatCharacter(" ",widthOfSpace)+firstCharacter;
@@ -50,19 +50,19 @@ const makeUpperPart = function (linesUpper,firstchar,lastchar,midchars){
 
 const makeMiddleLine = function(pattern,width){
   let createLine = (pattern != "filled") ? hollowLineGenetator : starLineGenetator;
-  return "*"+createLine(width-3)+"*";
+  return "*"+createLine(width-2)+"*";
 }
 
-const makeLowerPart = function (linesLower,firstchar,lastchar,midchars){
+const makeLowerPart = function (heightOfHalves,firstchar,lastchar,midchars){
   let result = "";
   let delimeter = "";
   let index = 0;
   let widthOfSpace = 1;
-  let widthOfHollow = 2*linesLower - 3;
+  let widthOfHollow = 2*heightOfHalves - 3;
   let firstCharacter = firstchar;
   let lastCharacter = lastchar;
-  while (index < linesLower){
-    if (index == linesLower-1){
+  while (index < heightOfHalves){
+    if (index == heightOfHalves-1){
       firstCharacter = "*";
       lastCharacter = "";
       widthOfHollow = 0;

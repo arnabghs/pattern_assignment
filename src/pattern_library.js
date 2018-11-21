@@ -54,16 +54,15 @@ const generateTriangle = function(userInputs){
 
 const generateDiamond = function (userInputs){
   let {pattern, height} = userInputs;
-  if(height%2 == 1) height++ ;
-  linesUpper = height/2 -1;
-  linesLower = linesUpper;
+  if(height%2 == 0) height-- ;
+  let heightOfHalves = Math.floor(height/2);
   let result = "";
   let symbol1 = '*', symbol2 = '*', symbol3 = '*';
   if (pattern === 'hollow') symbol3 = ' ';
   if (pattern === 'angled') symbol1 = "/", symbol2 = "\\", symbol3 = " ";
-  result += makeUpperPart(linesUpper,symbol1,symbol2,symbol3);
+  result += makeUpperPart(heightOfHalves,symbol1,symbol2,symbol3);
   result += "\n"+ makeMiddleLine(pattern,height);
-  result +="\n"+makeLowerPart(linesLower,symbol2,symbol1,symbol3);
+  result +="\n"+makeLowerPart(heightOfHalves,symbol2,symbol1,symbol3);
   return result;
 }
 
